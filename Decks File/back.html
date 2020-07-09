@@ -1,8 +1,8 @@
-<div id="sen" style="opacity:0">{{Splitted}}</div>
+<div id="sen" style="opacity:0;">{{Splitted}}</div>
 
 <div id="dash"></div>
 ______
-<div id="container"></div>
+<div style="color:black" id="container"></div>
 <br>
 
 <button class="btn-check" onclick="check();">CHECK</button>
@@ -16,16 +16,15 @@ ______
   <div id="hanzi" class="hanzi" style="display:none">{{中文}}</div>
   <div id="pinyin" class="pinyin" style="display:none">{{Pinyin}}</div>
   <div class="spacerSmall"> </div>
-  <div id="english" style="display:none">{{English}}</div>
+  <div id="english" class="translation" style="display:none">{{English}}</div>
   <div class="spacerMedium"> </div>
   <div id="notes" class="notes" style="display:none">{{Notes}}</div>
 </div>
 
-
 <div id="lessonInfo" class="lessonInfo" style="display:none">
   <div class="spacer"> </div>
   <div>Pattern: <span class="lessonInfoHanzi">{{Grammar Construct}}</span></div>
-  Article: <a href={{Source URL}}>{{Article Title}}</a>
+  Article: <a class="link" href={{Source URL}}>{{Article Title}}</a>
 </div>
 <script>
   document.getElementById("sen").style.display = "none";
@@ -40,10 +39,10 @@ ______
   }
 
   shuffle(senArr);
-  console.log(senArr);
+  //console.log(senArr);
   //console.log(senArr2);
   for (var i = 0; i < senArr.length; i++) {
-    btnElements += "<button class='btn-q' onclick='btnClick(this.id);' id = 'btn" + i + "'> " + senArr[i] + ' </button>';
+    btnElements += "<div class='btn-q' onclick='btnClick(this.id);' id = 'btn" + i + "'> " + senArr[i] + ' </div>';
   }
 
   var container = document.getElementById("container");
@@ -67,11 +66,6 @@ ______
     var dash = document.getElementById("dash");
     //console.log(dash.childElementCount);
     document.getElementById(clicked).remove();
-    //dashChild = dash.childNodes;
-    //dash.removeChild(clicked);
-    //var dashRM = document.getElementById(clicked);
-    //dash.parentElement.removeChild(clicked); // remove clicked text 
-
   }
 
   function check() {
@@ -128,7 +122,7 @@ ______
     var dashElement = document.createElement("div");
     var text = document.getElementById(clicked).innerText;
     dashElement.style.display = "inline";
-    dashElement.innerHTML = "<button class='btn-a' style='display: inline' onclick='dashClick(this.id);' id=" + picked + ">" + text + " </button>"; // add text at top of button
+    dashElement.innerHTML = "<span class='btn-a' onclick='dashClick(this.id);' id=" + picked + ">" + text + " </span>"; // add text at top of button
     document.getElementById("dash").appendChild(dashElement);
     picked++;
     document.getElementById(clicked).style.opacity = "0.2"; //hide button that has been clicked
@@ -167,7 +161,5 @@ ______
         document.getElementById("notes").style.display = "block";
         document.getElementById("lessonInfo").style.display = "block";
     }
-
   }
-
 </script>
