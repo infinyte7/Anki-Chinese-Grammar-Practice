@@ -87,7 +87,7 @@ font-size: 1rem;
 <br>[AnkiWeb Link](https://ankiweb.net/shared/info/551486109)
 
 ## My other anki decks
-[Anki Decks](https://ankiweb.net/shared/byauthor/2120672269)
+[Anki Decks](https://ankiweb.net/shared/byauthor/119943820)
 
 # License
 <b>[Chinese Grammar Wiki Study Deck](https://ankiweb.net/shared/info/782551504)</b>
